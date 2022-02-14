@@ -1,17 +1,14 @@
-package com.stanford.week5;
+package com.stanford.week6;
 
 public class Edge {
-
     private Vertex startingVertex;
     private Vertex endingVertex;
+    private int edgeLength;
 
-    public void setStartingVertex(Vertex startingVertex) {
-        this.startingVertex = startingVertex;
-    }
-
-    public Edge(Vertex startingVertex, Vertex endingVertex) {
+    public Edge(Vertex startingVertex, Vertex endingVertex, int edgeLength) {
         this.startingVertex = startingVertex;
         this.endingVertex = endingVertex;
+        this.edgeLength = edgeLength;
     }
 
     public Vertex getStartingVertex() {
@@ -22,7 +19,7 @@ public class Edge {
         return endingVertex;
     }
 
-    public void setEndingVertex(Vertex v1) {
-        this.endingVertex = v1;
+    public int getEdgeLength() {
+        return edgeLength;
     }
 }

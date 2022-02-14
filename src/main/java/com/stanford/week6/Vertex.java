@@ -1,24 +1,17 @@
-package com.stanford.week5;
+package com.stanford.week6;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vertex {
-
+public class Vertex implements Comparable<Vertex> {
     private int value;
-    private boolean explored;
-    private Vertex leader = null;
-    private int finishingTime= -1;
     private List<Edge> edges;
-    private List<Edge> revEdges;
-    private List<Edge> inUse = null;
-
+    private int calculatedDistance;
 
     public Vertex(int value) {
         this.value = value;
-        explored = false;
         edges = new ArrayList<>();
-        revEdges = new ArrayList<>();
+        calculatedDistance = value;
     }
 
     public void addEdge(Edge edge) {
@@ -33,33 +26,18 @@ public class Vertex {
         return value;
     }
 
-    public boolean isExplored() { return explored; }
-
-    public void setExplored(boolean explored) {
-        this.explored = explored;
+    public int getCalculatedDistance() {
+        return calculatedDistance;
     }
 
-    public int getFinishingTime() {
-        return finishingTime;
+    public void setCalculatedDistance(int calculatedDistance) {
+        this.calculatedDistance = calculatedDistance;
     }
 
-    public void setFinishingTime(int finishingTime) {
-        this.finishingTime = finishingTime;
-    }
-
-    public Vertex getLeader() {
-        return leader;
-    }
-
-    public void setLeader(Vertex leader) {
-        this.leader = leader;
-    }
-
-    public void addReverseEdge(Edge edge) {
-        revEdges.add(edge);
-    }
-
-    public List<Edge> getRevEdges() {
-        return revEdges;
+    @Override
+    public int compareTo(Vertex o) {
+        if (this.getCalculatedDistance() > o.getCalculatedDistance())
+            return 1;
+        return -1;
     }
 }
