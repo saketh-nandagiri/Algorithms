@@ -1,4 +1,4 @@
-package com.week2;
+package com.stanford.week2;
 
 import java.io.IOException;
 import java.nio.file.Files;

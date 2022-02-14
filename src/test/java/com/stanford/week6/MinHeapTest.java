@@ -1,4 +1,4 @@
-package com.week6;
+package com.stanford.week6;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,52 +6,65 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MinHeapTest {
 
-    private MinHeap minHeap;
+    private MinHeap<Vertex> minHeapVertices;
+    private MinHeap<Integer> minHeapIntegers;
 
     @Test
     void testEmptyHeap() {
-        minHeap = new MinHeap();
-        assertThrows(IllegalArgumentException.class, () -> minHeap.peek());
+        minHeapVertices = new MinHeap();
+        assertThrows(IllegalArgumentException.class, () -> minHeapVertices.peek());
+    }
+
+    @Test
+    void testHeapIntegers() {
+        minHeapIntegers = new MinHeap();
+        minHeapIntegers.add(100);
+        minHeapIntegers.add(1);
+        minHeapIntegers.add(200);
+        minHeapIntegers.add(5);
+        minHeapIntegers.add(10);
+
+        assertTrue(minHeapIntegers.peek() == 1, "Min heap should return 1 for peek");
     }
 
     @Test
     void testHeapPeek() {
-        minHeap = new MinHeap();
-        minHeap.add(200);
-        minHeap.add(150);
-        minHeap.add(1);
-        minHeap.add(4);
-        minHeap.add(3);
+        minHeapVertices = new MinHeap();
+        minHeapVertices.add(new Vertex(100));
+        minHeapVertices.add(new Vertex(1));
+        minHeapVertices.add(new Vertex(200));
+        minHeapVertices.add(new Vertex(5));
+        minHeapVertices.add(new Vertex(10));
 
-        assertTrue(minHeap.peek() == 1, "Min heap should return 1 for peek");
+        assertTrue(minHeapVertices.peek().getValue() == 1, "Min heap should return 1 for peek");
     }
 
     @Test
     void testHeapPoll() {
-        minHeap = new MinHeap();
-        minHeap.add(200);
-        minHeap.add(150);
-        minHeap.add(4);
-        minHeap.add(3);
-        minHeap.add(1);
-        minHeap.poll();
+        minHeapVertices = new MinHeap();
+        minHeapVertices.add(new Vertex(200));
+        minHeapVertices.add(new Vertex(150));
+        minHeapVertices.add(new Vertex(4));
+        minHeapVertices.add(new Vertex(3));
+        minHeapVertices.add(new Vertex(1));
+        minHeapVertices.poll();
 
-        assertTrue(minHeap.peek() == 3, "Min heap should return 3 for poll");
+        assertTrue(minHeapVertices.peek().getValue() == 3, "Min heap should return 3 for poll");
     }
 
     @Test
     void testHeapSize() {
-        minHeap = new MinHeap();
-        minHeap.add(200);
-        minHeap.add(150);
-        minHeap.add(4);
-        minHeap.add(3);
-        minHeap.add(1);
-        minHeap.poll();
-        minHeap.poll();
-        minHeap.poll();
+        minHeapVertices = new MinHeap();
+        minHeapVertices.add(new Vertex(200));
+        minHeapVertices.add(new Vertex(150));
+        minHeapVertices.add(new Vertex(4));
+        minHeapVertices.add(new Vertex(3));
+        minHeapVertices.add(new Vertex(1));
+        minHeapVertices.poll();
+        minHeapVertices.poll();
+        minHeapVertices.poll();
 
-        assertTrue(minHeap.getSize() == 2, "Min heap should have 2 elements left");
+        assertTrue(minHeapVertices.getSize() == 2, "Min heap should have 2 elements left");
     }
 
 }

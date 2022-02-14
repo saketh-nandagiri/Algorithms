@@ -1,4 +1,4 @@
-package com.week1;
+package com.stanford.week1;
 
 import java.math.BigInteger;
 

@@ -1,6 +1,4 @@
-package com.week5;
-
-import com.week5.Vertex;
+package com.stanford.week5;
 
 public class Edge {
 

@@ -1,12 +1,10 @@
-package com.week3;
+package com.stanford.week3;
 
 import java.io.IOException;
-import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class QuickSort {
 

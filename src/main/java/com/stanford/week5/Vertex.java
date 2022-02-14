@@ -1,4 +1,4 @@
-package com.week5;
+package com.stanford.week5;
 
 import java.util.ArrayList;
 import java.util.List;

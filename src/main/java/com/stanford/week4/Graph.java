@@ -1,4 +1,4 @@
-package com.week4;
+package com.stanford.week4;
 
 
 import java.util.LinkedList;

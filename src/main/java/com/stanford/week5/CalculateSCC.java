@@ -1,4 +1,4 @@
-package com.week5;
+package com.stanford.week5;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
