@@ -2,7 +2,6 @@ package com.stanford.week6;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -29,15 +28,6 @@ public class Dijkstras {
            shortestPaths[vertex.getValue() - 1] = vertex.getCalculatedDistance();
            adjustHeap(vertex);
         }
-
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(shortestPaths[6]).append(",").append(shortestPaths[36]).append(",").append(shortestPaths[58]).append(",").append(shortestPaths[81])
-                        .append(",").append(shortestPaths[98]).append(",").append(shortestPaths[114]).append(",").append(shortestPaths[132])
-                .append(",").append(shortestPaths[164]).append(",").append(shortestPaths[187]).append(",").append(shortestPaths[196]);
-
-        System.out.println(stringBuilder);
-
-        System.out.println(Arrays.toString(shortestPaths));
     }
 
     private void adjustHeap(Vertex vertex) {
@@ -87,6 +77,4 @@ public class Dijkstras {
     private void buildGraph(String filePath) throws IOException {
         graph.buildGraph(filePath);
     }
-
-
 }
