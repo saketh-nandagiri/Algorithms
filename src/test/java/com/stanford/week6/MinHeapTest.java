@@ -2,6 +2,8 @@ package com.stanford.week6;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class MinHeapTest {
@@ -18,11 +20,8 @@ class MinHeapTest {
     @Test
     void testHeapIntegers() {
         minHeapIntegers = new MinHeap();
-        minHeapIntegers.add(100);
-        minHeapIntegers.add(1);
-        minHeapIntegers.add(200);
-        minHeapIntegers.add(5);
-        minHeapIntegers.add(10);
+        Arrays.asList(100, 1, 200, 5, 10).stream()
+                        .forEach(number -> minHeapIntegers.add(number));
 
         assertTrue(minHeapIntegers.peek() == 1, "Min heap should return 1 for peek");
     }
@@ -30,11 +29,8 @@ class MinHeapTest {
     @Test
     void testHeapPeek() {
         minHeapVertices = new MinHeap();
-        minHeapVertices.add(new Vertex(100));
-        minHeapVertices.add(new Vertex(1));
-        minHeapVertices.add(new Vertex(200));
-        minHeapVertices.add(new Vertex(5));
-        minHeapVertices.add(new Vertex(10));
+        Arrays.asList(100, 1, 200, 5, 10).stream()
+                .forEach(number -> minHeapVertices.add(new Vertex(number)));
 
         assertTrue(minHeapVertices.peek().getValue() == 1, "Min heap should return 1 for peek");
     }
@@ -42,11 +38,8 @@ class MinHeapTest {
     @Test
     void testHeapPoll() {
         minHeapVertices = new MinHeap();
-        minHeapVertices.add(new Vertex(200));
-        minHeapVertices.add(new Vertex(150));
-        minHeapVertices.add(new Vertex(4));
-        minHeapVertices.add(new Vertex(3));
-        minHeapVertices.add(new Vertex(1));
+        Arrays.asList(200, 150, 4, 3, 1).stream()
+                .forEach(number -> minHeapVertices.add(new Vertex(number)));
         minHeapVertices.poll();
 
         assertTrue(minHeapVertices.peek().getValue() == 3, "Min heap should return 3 for poll");
@@ -55,11 +48,8 @@ class MinHeapTest {
     @Test
     void testHeapSize() {
         minHeapVertices = new MinHeap();
-        minHeapVertices.add(new Vertex(200));
-        minHeapVertices.add(new Vertex(150));
-        minHeapVertices.add(new Vertex(4));
-        minHeapVertices.add(new Vertex(3));
-        minHeapVertices.add(new Vertex(1));
+        Arrays.asList(200, 150, 4, 3, 1).stream()
+                .forEach(number -> minHeapVertices.add(new Vertex(number)));
         minHeapVertices.poll();
         minHeapVertices.poll();
         minHeapVertices.poll();
